@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>简明指南 · 相关知识库</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f8f6f0;
+      color: #2e2b26;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', sans-serif;
+      line-height: 1.7;
+      padding: 2.5rem 1.5rem;
+    }
+    .page {
+      max-width: 880px;
+      margin: 0 auto;
+      background: #fefcf8;
+      border-radius: 28px;
+      padding: 2.8rem 2.2rem 3.5rem;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      border-left: 6px solid #b5a48d;
+      padding-left: 1.1rem;
+      margin-bottom: 1rem;
+      color: #3b352f;
+    }
+    .subhead {
+      color: #6b6258;
+      font-size: 1.05rem;
+      margin-bottom: 2.4rem;
+      border-bottom: 1px dashed #ded8ce;
+      padding-bottom: 0.9rem;
+    }
+    .directory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1.2rem;
+      margin: 2rem 0 2.2rem;
+    }
+    .dir-card {
+      background: #f3efe9;
+      padding: 1rem 1.1rem;
+      border-radius: 16px;
+      font-size: 0.95rem;
+      border: 1px solid #e3dcd1;
+      transition: background 0.15s;
+    }
+    .dir-card:hover { background: #ede7de; }
+    .dir-card strong {
+      display: block;
+      font-weight: 600;
+      color: #4f463e;
+      margin-bottom: 0.3rem;
+    }
+    .dir-card span { color: #5f554b; }
+    .info-block {
+      background: #f6f1ea;
+      border-left: 5px solid #b5a48d;
+      padding: 1.2rem 1.6rem;
+      border-radius: 0 14px 14px 0;
+      margin: 2.2rem 0;
+    }
+    .info-block p { margin-bottom: 0.6rem; }
+    .info-block p:last-child { margin-bottom: 0; }
+    .note-box {
+      background: #eae4db;
+      padding: 1.2rem 1.6rem;
+      border-radius: 18px;
+      margin: 2rem 0;
+      color: #3c352e;
+    }
+    .note-box strong { color: #2d2721; }
+    .faq-mini {
+      margin: 2.2rem 0 1.2rem;
+      padding: 1.2rem 0 0.2rem;
+      border-top: 1px solid #e2dbcf;
+    }
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+    .faq-item .q {
+      font-weight: 600;
+      color: #4a4139;
+    }
+    .faq-item .a {
+      color: #4d443b;
+      padding-left: 1rem;
+      border-left: 3px solid #d6cec1;
+      margin-top: 0.2rem;
+      font-size: 0.97rem;
+    }
+    .link-sentence {
+      background: #f2ede4;
+      padding: 1rem 1.6rem;
+      border-radius: 40px;
+      display: inline-block;
+      margin: 1.2rem 0 0.8rem;
+    }
+    a {
+      color: #6f5e4b;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #c6b9a9;
+      transition: color 0.15s;
+    }
+    a:hover { color: #3f3329; text-decoration-color: #3f3329; }
+    .footnote {
+      margin-top: 2.8rem;
+      color: #7a7064;
+      font-size: 0.88rem;
+      border-top: 1px solid #e3dbcf;
+      padding-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.8rem 0.5rem;
+    }
+    @media (max-width: 540px) {
+      .page { padding: 1.8rem 1.2rem; }
+      h1 { font-size: 1.6rem; }
+      .directory-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <h1>简明知识库 · 访问指引</h1>
+  <div class="subhead">面向使用者的基础说明、提示与相关信息整理</div>
+
+  <!-- 目录感卡片区 -->
+  <div class="directory-grid">
+    <div class="dir-card"><strong>背景理解</strong><span>服务定位与基本概念</span></div>
+    <div class="dir-card"><strong>操作备忘</strong><span>常用操作与注意事项</span></div>
+    <div class="dir-card"><strong>环境提示</strong><span>网络配置与兼容性</span></div>
+    <div class="dir-card"><strong>问题摘要</strong><span>常见疑问简答</span></div>
+  </div>
+
+  <!-- 介绍 / 指南区 -->
+  <p>本页整理与 <a href="https://panel-igames.com.cn">ayx</a> 相关的基础信息，帮助新接触的用户快速了解框架、功能方向与一些值得留意的细节。以下内容均以简明扼要的方式呈现，不涉及深度技术文档，适合作为起始参考。</p>
+
+  <div class="info-block">
+    <p><strong>▎ 平台定位</strong> · 面向特定业务场景提供的数据管理与接口配置界面，整合常用功能模块。通过对权限、数据源、基本参数的可视化调整，降低重复性操作成本。</p>
+    <p><strong>▎ 使用前建议</strong> · 确保拥有已授权的账户信息；网络环境需能够正常连接目标服务端。首次进入后建议先浏览左侧导航结构，了解各模块的大致用途。</p>
+  </div>
+
+  <!-- 提示区 -->
+  <div class="note-box">
+    <strong>⚡ 访问提醒</strong><br>
+    · 请使用主流浏览器（Chrome / Firefox / Edge 最新版本）以获得完整界面显示效果。<br>
+    · 部分功能依赖 Cookie 及 JavaScript，请确保浏览器未禁用。<br>
+    · 建议避免在公共设备上保存登录凭证；操作完成后及时登出。
+  </div>
+
+  <!-- 相关信息区 + FAQ 摘要 -->
+  <div class="faq-mini">
+    <div class="faq-item">
+      <div class="q">— 登录时提示“连接超时”怎么办？</div>
+      <div class="a">先检查本地网络与目标服务器是否可达；部分防火墙或代理规则可能阻断连接，可尝试切换网络或联系网络管理员。如问题持续，可向支持渠道反馈。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">— 如何确认当前使用的版本？</div>
+      <div class="a">登录后在页面底部或“关于”区域通常显示版本号。不同版本间界面与功能可能有细微差异，建议定期关注更新说明。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">— 是否提供数据导出功能？</div>
+      <div class="a">部分列表与报表页面支持导出为 CSV 或 Excel 格式，具体以各页面实际按钮为准。若未显示导出选项，可能是权限或功能尚未开放。</div>
+    </div>
+  </div>
+
+  <!-- 自然嵌入链接的句子（a 标签可见文本严格等于 ayx） -->
+  <div class="link-sentence">
+    若尚未了解平台入口，可直接通过 <a href="https://panel-igames.com.cn">ayx</a> 进入主界面。建议先阅读本页信息再开始操作。
+  </div>
+
+  <!-- 脚注 / 补充 -->
+  <div class="footnote">
+    <span>信息整理 · 仅供参考</span>
+    <span>内容不定期更新 · 请以实际页面为准</span>
+  </div>
+
+</div>
+</body>
+</html>
