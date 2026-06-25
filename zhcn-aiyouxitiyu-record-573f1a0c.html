@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏体育 · 稳定入口与页面说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f2f2f0;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            color: #2c3e3f;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .page {
+            max-width: 840px;
+            margin: 0 auto;
+        }
+
+        /* 开场短句 —— 卡片式 hero */
+        .hero-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2.8rem 2.2rem;
+            margin-bottom: 2.4rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e6e4e2;
+            transition: box-shadow 0.25s;
+        }
+
+        .hero-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+        }
+
+        .hero-label {
+            display: inline-block;
+            background: #eae8e4;
+            color: #4b5b5a;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            margin-bottom: 1.2rem;
+            border: 1px solid #d6d3cf;
+        }
+
+        .hero-title {
+            font-size: 2.2rem;
+            font-weight: 350;
+            letter-spacing: -0.02em;
+            color: #1e2b2c;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
+
+        .hero-title strong {
+            font-weight: 500;
+            color: #2f5e5c;
+        }
+
+        .hero-intro {
+            font-size: 1.1rem;
+            color: #4b5e5d;
+            max-width: 650px;
+        }
+
+        /* 承接段落卡片 */
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 2rem 2.2rem;
+            margin-bottom: 1.8rem;
+            border: 1px solid #e2dfdc;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02), 0 0 0 1px rgba(0, 0, 0, 0.01);
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: 420;
+            color: #1f3536;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #eae7e3;
+            padding-bottom: 0.5rem;
+        }
+
+        .card p {
+            margin-bottom: 1rem;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 特点列表 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem 1.8rem;
+            margin: 1.4rem 0 0.4rem;
+        }
+
+        .feature-item {
+            background: #f9f8f6;
+            padding: 1rem 1.2rem;
+            border-radius: 14px;
+            border: 1px solid #e6e2de;
+            transition: background 0.2s;
+        }
+
+        .feature-item:hover {
+            background: #f4f2ef;
+        }
+
+        .feature-item .emoji {
+            font-size: 1.3rem;
+            margin-right: 0.4rem;
+        }
+
+        .feature-item .label {
+            font-weight: 470;
+            color: #1f3a3a;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .feature-item .desc {
+            font-size: 0.95rem;
+            color: #526362;
+        }
+
+        /* 温和结尾 */
+        .closing {
+            background: #ffffffef;
+            border: 1px solid #dcd9d5;
+            border-radius: 18px;
+            padding: 1.8rem 2.2rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .closing p {
+            font-size: 1.05rem;
+            color: #3c5150;
+        }
+
+        .closing .signature {
+            margin-top: 1.2rem;
+            font-size: 0.92rem;
+            color: #697a79;
+            border-top: 1px solid #e3dfdb;
+            padding-top: 1rem;
+        }
+
+        a {
+            color: #2d6b68;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: #2d6b68;
+            color: #1e4f4c;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem 0.75rem;
+            }
+
+            .hero-card {
+                padding: 1.8rem 1.2rem;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 0.9rem;
+            }
+
+            .closing {
+                padding: 1.4rem 1rem;
+            }
+        }
+
+        /* 小点缀 */
+        .soft-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d6d2cd, transparent);
+            margin: 1.2rem 0;
+        }
+
+        .tagline {
+            font-size: 0.98rem;
+            color: #617473;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- 开场短句 -->
+        <div class="hero-card">
+            <span class="hero-label">稳定入口 · 页面说明</span>
+            <h1 class="hero-title">
+                从一处安静的<strong>入口</strong>开始
+            </h1>
+            <p class="hero-intro">
+                有时只是需要一个地方，能清晰知道要去哪里、做什么。<br>
+                <a href="https://zhcn-aiyouxitiyu.com">爱游戏体育</a> 并不是什么复杂的终点，它更像一个安静的起点——让你每次打开，都清楚该往哪个方向走。
+            </p>
+        </div>
+
+        <!-- 承接段落：关于这个页面，以及它想说明的事 -->
+        <div class="card">
+            <h2>为什么需要稳定入口</h2>
+            <p>
+                在一个信息流动很快的时期，一个简洁、不绕弯子的页面反而显得稀有。这个页面存在的理由很简单：当你面对浏览器里的书签、频道、收藏夹，有时候只是想找到一个<strong>能够直接落脚的页面</strong>。
+            </p>
+            <p>
+                <a href="https://zhcn-aiyouxitiyu.com">爱游戏体育</a> 的首页正是这样的落脚点。它没有多余的弹窗，没有频繁变动的干扰区，版式也保持统一。我们把它当作一个“长期的索引页”——无论何时访问，你都能在相同的位置找到自己关心的内容。
+            </p>
+            <div class="soft-divider"></div>
+            <p class="tagline">
+                · 页面结构清晰 · 更新频率克制 · 不堆砌信息 ·
+            </p>
+        </div>
+
+        <!-- 特点列表：聚合卡片形式 -->
+        <div class="card">
+            <h2>几个让你记住它的特点</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <span class="emoji">🪧</span>
+                    <span class="label">一致的板块区隔</span>
+                    <span class="desc">每个栏目都有固定的视觉位置，无需重新适应布局。</span>
+                </div>
+                <div class="feature-item">
+                    <span class="emoji">🔗</span>
+                    <span class="label">明确的导航路径</span>
+                    <span class="desc">主要功能入口稳定可见，减少查找成本。</span>
+                </div>
+                <div class="feature-item">
+                    <span class="emoji">📄</span>
+                    <span class="label">说明优先于装饰</span>
+                    <span class="desc">文字内容保持直接，不靠花哨动效吸引注意。</span>
+                </div>
+                <div class="feature-item">
+                    <span class="emoji">🌱</span>
+                    <span class="label">轻量响应式</span>
+                    <span class="desc">在手机与桌面端都能顺畅阅读，不丢失关键信息。</span>
+                </div>
+            </div>
+            <p style="margin-top: 1.2rem; font-size: 0.95rem; color: #5b6f6e;">
+                这些细节并非独创，但我们相信，构建一个让人感到“稳妥”的页面本身就有价值。
+            </p>
+        </div>
+
+        <!-- 场景提示：什么情况下会用到这个页面 -->
+        <div class="card">
+            <h2>它适合什么时候打开</h2>
+            <p>
+                — 当你刚收藏一个新网站，想先看看它的首页长什么样；<br>
+                — 当你需要快速回到一个熟悉的入口，不想被推荐流分散注意力；<br>
+                — 当你想向朋友介绍一个风格整洁、定位清晰的体育信息页面时。
+            </p>
+            <p style="margin-top: 1rem;">
+                在这些场景里，<a href="https://zhcn-aiyouxitiyu.com">爱游戏体育</a> 首页扮演的角色更像一个“安静的前台”——不主动推销，但随时可以走进去看看。
+            </p>
+        </div>
+
+        <!-- 温和结尾 + FAQ 摘要风格 -->
+        <div class="closing">
+            <p>
+                如果你已经熟悉这个页面，可以直接把它当作日常入口；<br>
+                如果这是第一次遇见，希望它给你留下一种简单、可靠的印象。
+            </p>
+            <div class="signature">
+                <span style="opacity: 0.7;">—— 页面由始至终，保持同一份说明 ——</span><br>
+                <span style="font-size: 0.85rem; display: inline-block; margin-top: 0.5rem; color: #718887;">
+                    · 首页结构稳定 · 链接位置不变 · 无弹窗打扰 ·
+                </span>
+            </div>
+        </div>
+
+        <!-- 微小脚注：仅作结构完整 -->
+        <div style="text-align: center; font-size: 0.8rem; color: #9eaba9; padding: 1.5rem 0 0.2rem; border-top: 1px solid #e0dbd7; margin-top: 1.2rem;">
+            <a href="https://zhcn-aiyouxitiyu.com" style="color: #7b9592; border: none;">爱游戏体育</a> · 稳定入口与页面说明
+        </div>
+
+    </div>
+</body>
+</html>
